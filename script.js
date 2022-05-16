@@ -26,8 +26,8 @@ function nxtQues(){
 }
 function right(k){
     
-    k.style.backgroundColor="green";
-    document.querySelector(".answer").style.backgroundColor="green";
+    k.style.backgroundColor="lightgreen";
+    document.querySelector(".answer").style.backgroundColor="lightgreen";
     document.querySelector(".answer").textContent="Correct Answer"+" : "+(correct>1?correct>2?"Excellent":"bravo":"good");
   setTimeout(function(){
    nxtQues();
