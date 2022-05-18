@@ -26,12 +26,14 @@ function nxtQues(){
 }
 function right(k){
     
-    k.style.backgroundColor="lightgreen";
-    document.querySelector(".answer").style.backgroundColor="lightgreen";
+    k.style.backgroundImage= "url('glitter.gif')";
+    document.querySelector(".answer").style.backgroundImage= "url('glitter.gif')";
     document.querySelector(".answer").style.color="yellow";
     document.querySelector(".answer").textContent="Correct Answer"+" : "+(correct>1?correct>2?"Excellent":"bravo":"good");
   setTimeout(function(){
    nxtQues();
+   k.style.backgroundImage= "";
+   document.querySelector(".answer").style.backgroundImage= "";
    k.style.backgroundColor="lightblue";
    document.querySelector(".answer").style.backgroundColor="white";
     document.querySelector(".answer").textContent="";
@@ -40,12 +42,15 @@ function right(k){
 
 }
 function wrong(k){
+    // k.
     k.style.backgroundColor="red";
     document.querySelector(".answer").textContent="Wrong Answer";
     document.querySelector(".answer").style.backgroundColor="red";
+    document.querySelector(".answer").classList.add("glow");
     setTimeout(function(){
       
         nxtQues();
+        document.querySelector(".answer").classList.remove("glow");
         k.style.backgroundColor="lightblue";
         document.querySelector(".answer").style.backgroundColor="white";
     document.querySelector(".answer").textContent="";
